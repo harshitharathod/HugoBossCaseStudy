@@ -1,0 +1,62 @@
+<mat-sidenav-container fullscreen>
+    <app-tool-bar></app-tool-bar>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row" class="mt20">
+                <div class="col-md-6 offset-md-3">
+                    <mat-card>
+                        <div class="container text-center">
+                            <img src="../../assets/logosignup.png" width="90" height="100" alt="" />
+                        </div>
+                        <h1 class="text-center">LOGIN</h1>
+                        <form [formGroup]="loginForm" #formDirective="ngForm"
+                            (ngSubmit)="loginForm.valid && formSubmit(formDirective)" novalidate>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input matInput formControlName="username" placeholder="Enter your Username" required
+                                    name="username" [(ngModel)]=login.username>
+                                <mat-error
+                                    *ngIf="!loginForm.get('username')?.errors?.required && (loginForm.get('username')?.errors?.minlength)">
+                                    Please enter a valid username
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched) && loginForm.get('username')?.errors?.required">
+                                    Username is required
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="password"
+                                    placeholder="Enter your Password" required name="password"
+                                    [(ngModel)]=login.password [type]="hide ? 'password': 'text'">
+                                <mat-icon matSuffix (click)="hide =!hide">{{hide ? 'visibility' : 'visibility_off'}}
+                                </mat-icon>
+                                <mat-error *ngIf="!loginForm.get('password')?.errors?.required && (loginForm.get('password')?.errors?.pattern)">
+                                    Password length must be greater than or equal to 8 and password must contain one or
+                                    more uppercase , lowercase , numeric and special characters
+                                </mat-error>
+                                <mat-error
+                                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+                                    Password is required
+                                </mat-error>
+                            </mat-form-field>
+
+                            <div class="container text-center">
+                                <button type="submit" mat-raised-button color="primary">Login</button>
+                                <button style="margin-left: 20px;" mat-raised-button color="accent">Clear</button>
+                            </div>
+
+
+                            <div class="a-divider a-divider-break mt20">
+                                <h5 arial-level="5">New to Hugo Boss?</h5>
+                                <a [routerLink]="'/signup'">Register here!!</a>
+                            </div>
+
+                        </form>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-sidenav-container>

@@ -1,0 +1,46 @@
+.text-center{
+    text-align: center;
+}
+.example-container{
+    height: 50%;
+    width: 20%;
+    text-align: left;
+}
+.d-flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mat-form-field{
+    width: 100%;
+}
+.mt-top{
+    margin-top: 30px;
+}
+.mt-top-2{
+    margin-top: 10px;
+}
+
+.card-content {
+    
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+
+    width:500px;
+    padding:40px 30px;
+    background:#eee;
+    margin:auto;
+    border:1px solid #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10%;
+  }
+
+  .a-box .a-divider.a-divider-break, .a-color-base-background .a-divider.a-divider-break, .a-divider.a-divider-break {
+    text-align: center;
+    position: relative;
+    top: 2px;
+    padding-top: 1px;
+    margin-bottom: 14px;
+    line-height: 0;
+}

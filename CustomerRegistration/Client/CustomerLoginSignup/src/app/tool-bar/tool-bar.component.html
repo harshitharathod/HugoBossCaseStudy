@@ -1,0 +1,27 @@
+
+    <mat-toolbar class="app-toolbar">
+        <a [routerLink]="'/'"><img style="color:white" src="../../assets/Hugo_Boss_logo_2021.png" width="120" height="30" alt="" /></a>
+        <span class="example-spacer"></span>
+        <h4 *ngIf="!isLoggedIn">CUSTOMER PORTAL</h4>
+        <span class="example-spacer"></span>
+        <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          Login
+        </a>
+        <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon">
+          Register
+        </a>
+       
+        <a  *ngIf="isLoggedIn && customer" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+          {{customer.username}}
+        </a>
+        
+        <a  (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+          Logout
+        </a>
+
+       
+      </mat-toolbar>
+
+
+
+   

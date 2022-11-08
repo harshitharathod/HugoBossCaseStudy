@@ -1,0 +1,38 @@
+<mat-sidenav-container fullscreen>
+    <app-tool-bar></app-tool-bar>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row" class="mt20">
+                <div class="col-md-6 offset-md-3">
+
+                    <h2 style="text-align: center">Profile Details</h2>
+                    <div class="table-responsive">
+                          <table class="table table-bordered">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>{{ customer.id }}</td>
+                                <td>{{ customer.username }}</td>
+                                <td>{{ customer.firstName }}</td>
+                                <td>{{ customer.lastName }}</td>
+                                <td>{{ customer.email }}</td>
+                                <td>{{ customer.address }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-sidenav-container>
